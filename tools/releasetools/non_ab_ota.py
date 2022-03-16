@@ -204,6 +204,31 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   # Dump fingerprints
   script.Print("Target: {}".format(target_info.fingerprint))
 
+  date = target_info.GetBuildProp("ro.infinity.build.date")
+  version = target_info.GetBuildProp("ro.infinity.version")
+  maintainer = target_info.GetBuildProp("ro.infinity.maintainer")
+
+  if target_info.GetBuildProp("ro.product.model") is not None:
+    model = target_info.GetBuildProp("ro.product.model")
+    script.Print("***********************************************");
+    script.Print("           Project Infinity X for %s"%(model));
+    script.Print("               Maintainer: %s"%(maintainer));
+    script.Print("               Lead Devs: RDx55 & tejas101k ");
+    script.Print("               Designers: JazeeBlaze & Dabishere ");
+    script.Print("   VERSION: %s"%(version));
+    script.Print("   Build Date: %s"%(date));
+    script.Print("***********************************************");
+  else:
+    name = target_info.GetBuildProp("ro.product.name")
+    script.Print("***********************************************");
+    script.Print("           Project Infinity X for %s"%(name));
+    script.Print("               Maintainer: %s"%(maintainer));
+    script.Print("               Lead Devs: RDx55 & tejas101k ");
+    script.Print("               Designers: JazeeBlaze & Dabishere ");
+    script.Print("   VERSION: %s"%(version));
+    script.Print("   Build Date: %s"%(date));
+    script.Print("***********************************************");
+
   device_specific.FullOTA_InstallBegin()
 
   # All other partitions as well as the data wipe use 10% of the progress, and
