@@ -22,20 +22,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/media_product.mk)
 
 # /product packages
 PRODUCT_PACKAGES += \
-    Calendar \
     Contacts \
     DeskClock \
-    Gallery2 \
     LatinIME \
-    Music \
     preinstalled-packages-platform-handheld-product.xml \
     SettingsIntelligence \
     frameworks-base-overlays
-
-ifeq ($(INFINITY_BUILD),)
-PRODUCT_PACKAGES += \
-    Camera2
-endif
 
 PRODUCT_PACKAGES_DEBUG += \
     frameworks-base-overlays-debug
