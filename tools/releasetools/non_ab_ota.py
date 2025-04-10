@@ -214,30 +214,30 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   # Dump fingerprints
   script.Print("Target: {}".format(target_info.fingerprint))
 
-  date = target_info.GetBuildProp("ro.infinity.build.date")
-  version = target_info.GetBuildProp("ro.infinity.version")
-  maintainer = target_info.GetBuildProp("ro.infinity.maintainer")
-
-  if target_info.GetBuildProp("ro.product.model") is not None:
-    model = target_info.GetBuildProp("ro.product.model")
-    script.Print("***********************************************");
-    script.Print("           Project Infinity X for %s"%(model));
-    script.Print("               Maintainer: %s"%(maintainer));
-    script.Print("               Lead Devs: RDx55 & tejas101k ");
-    script.Print("               Designers: JazeeBlaze & Dabishere ");
-    script.Print("   VERSION: %s"%(version));
-    script.Print("   Build Date: %s"%(date));
-    script.Print("***********************************************");
-  else:
-    name = target_info.GetBuildProp("ro.product.name")
-    script.Print("***********************************************");
-    script.Print("           Project Infinity X for %s"%(name));
-    script.Print("               Maintainer: %s"%(maintainer));
-    script.Print("               Lead Devs: RDx55 & tejas101k ");
-    script.Print("               Designers: JazeeBlaze & Dabishere ");
-    script.Print("   VERSION: %s"%(version));
-    script.Print("   Build Date: %s"%(date));
-    script.Print("***********************************************");
+  script.Print("                                                ");
+  script.Print("         _____           _           _          ");
+  script.Print("        |  __ \         (_)         | |         ");
+  script.Print("        | |__) | __ ___  _  ___  ___| |_        ");
+  script.Print("        |  ___/ '__/ _ \| |/ _ \/ __| __|       ");
+  script.Print("        | |   | | | (_) | |  __/ (__| |_        ");
+  script.Print("        |_|   |_|  \___// |\___|\___|\__|       ");
+  script.Print("                     _/  /                      ");
+  script.Print("                    |__/                        ");
+  script.Print("                                                ");
+  script.Print("       |_  _|     | __          | |             ");
+  script.Print("        | |  _ __ | |_ _ _ __  _| |_ _   _      ");
+  script.Print("        | | | '_ \|  _| | '_ \| | __| | | |     ");
+  script.Print("       _| |_| | | | | | | | | | | |_| |_| |     ");
+  script.Print("       |____|_| |_|_| |_|_| |_|_|\__|\__, |     ");
+  script.Print("                                      __/ |     ");
+  script.Print("                                     |___/      ");
+  script.Print("                                                ");
+  script.Print("                     \ \ / /                    ");
+  script.Print("                      \ V /                     ");
+  script.Print("                       > <                      ");
+  script.Print("                      / . \                     ");
+  script.Print("                     /_/ \_\                    ");
+  script.Print("                                                ");
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
